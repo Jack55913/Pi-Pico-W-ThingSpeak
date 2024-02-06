@@ -2,9 +2,9 @@ import machine, network, time, urequests
 from machine import Pin, I2C
 from bmp280 import *
 
-ssid = 'CAMBIA POR TU SSID' 
-password = '**TU PASSWORD**'
-url = "https://api.thingspeak.com/update?api_key=1KGU5UYSXKWPGOMP"
+ssid = 'Buffalo-G-38B8' 
+password = '3dps46uvi7dcb'
+url = "https://api.thingspeak.com/update?api_key=1KGU5UYSXKWPGOMP&field1=0"
 
 red = network.WLAN(network.STA_IF)
 
@@ -18,7 +18,7 @@ print('Conexión correcta')
 print(red.ifconfig())
 
 ultima_peticion = 0
-intervalo_peticiones = 30
+intervalo_peticiones = 15
 
 bus = I2C(0, sda=Pin(0), scl=Pin(1))
 bmp = BMP280(bus)
